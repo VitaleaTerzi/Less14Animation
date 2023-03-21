@@ -34,27 +34,25 @@ main {
   position: fixed;
   bottom: 0px;
   right: 100px;
-  animation: play 0.1s linear 1s infinite alternate-reverse;
-
-}
-
-@keyframes play {
-0% {
-transform: translateX(0); 
-}
-
-0% {
-  transform: translateY(0);
-  bottom: -220px;
-}
 }
 
 .hoverbox-title {
   background: radial-gradient(red, blue);
   color: aquamarine;
   position: relative;
- 
+  animation: play 0.1s linear infinite alternate-reverse;
 }
+
+@keyframes play {
+  0% {
+  transform: translateX(0); 
+  }
+  
+  100% {
+    transform: translateY(20px);
+  }
+  }
+
 .links {
   width: 170px;
   padding: 50px 0;
@@ -96,14 +94,15 @@ transform: translateX(0);
 
 .hoverbox {
   transform: translateY(calc(100% - 50px));
-  transition: all 2s linear; 
+  transition: all 1s linear; 
 }
 
 .hoverbox:hover {
-   transform: translateY(0); 
-   /* bottom: -220px;  */
-   top: 50%; 
+transform: translateY(0); 
+
 } 
 
-
+.hoverbox:hover .hoverbox-title{
+animation: none; 
+}
 
